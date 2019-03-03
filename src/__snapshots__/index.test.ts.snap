@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot anonymous component 1`] = `<Component />`;
+
+exports[`snapshot class component 1`] = `<ClassComponent />`;
+
+exports[`snapshot deep dive 1`] = `
+<DivWrapper>
+  <div>
+    <p
+      className="a"
+    >
+      <DivWrapper>
+        <div>
+          <p
+            className="b"
+          >
+            hoge
+          </p>
+        </div>
+      </DivWrapper>
+    </p>
+  </div>
+</DivWrapper>
+`;
+
+exports[`snapshot empty children 1`] = `<p />`;
+
+exports[`snapshot multiple children 1`] = `
+<p>
+  <p
+    className="a"
+  />
+  <p
+    className="b"
+  />
+</p>
+`;
+
+exports[`snapshot multiple children includes null 1`] = `
+<div>
+  <p
+    className="a"
+  />
+  <p
+    className="b"
+  />
+</div>
+`;
+
+exports[`snapshot multiple children includes string 1`] = `
+<div>
+  <div
+    className="a"
+  />
+  hoge
+  <div
+    className="b"
+  />
+</div>
+`;
+
+exports[`snapshot multiple children with keys 1`] = `
+<p>
+  <p />
+  <p />
+</p>
+`;
+
+exports[`snapshot null 1`] = `null`;
+
+exports[`snapshot null component 1`] = `<EmptyComponent />`;
+
+exports[`snapshot raw children 1`] = `
+<DivWrapper>
+  <div>
+    <p />
+  </div>
+</DivWrapper>
+`;
+
+exports[`snapshot single children 1`] = `
+<p>
+  <p />
+</p>
+`;
+
+exports[`snapshot string children 1`] = `
+<p>
+  hoge
+</p>
+`;
+
+exports[`snapshot with props 1`] = `
+<p
+  className="a"
+/>
+`;

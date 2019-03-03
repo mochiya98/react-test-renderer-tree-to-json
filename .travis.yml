@@ -1,0 +1,20 @@
+cache: npm
+dist: xenial
+git:
+  depth: 1
+language: node_js
+node_js:
+- stable
+- lts/*
+before_install:
+- npm set progress false
+after_success:
+- cat ./coverage/lcov.info | npx coveralls
+deploy:
+  email: yukimasafunaoka@gmail.com
+  provider: npm
+  skip_cleanup: true
+  on:
+    tags: true
+  api_key:
+    secure: X/tRwLcHvYzWJzA5qaKZG4QrGRw4WUYiScjgqHkmMPMMvClChQRJGY9FfNou2WlLNrk+H6V/5jA9p4c2MMNH8rx7kmcu2zTiMtegacfFIYIyMW1PGUQXKml0bul8WHsUJfHk7h39S06vPlaBwx2Y3zOjuB+zlFCr12k4xi/kcFFn2JqVSlwRaVCsXYQ3Dn0MR/yVqbVHf/RIs4QYpTe8NAzX5e17AcbmxOZDE8QMjNsQxhAiwxP4XjBiVwWjCUpYPdqxX3mw4e99sw++zACkgT9kkood3p22hx5wguAwlxfRNMEjB1IuGDkLgSDZLLDws0I9LT+BO4huYiKtqUtRP+LB6nL+bKmRn0ZiPv9Tbyj+08t4kVd6ufu9HhRipkhbGpp5a22gFfw6gduCDLk3TU6XzAXQjIn7P+TtQ1/B1BGizJzZWqwwHfrBRa80cF1lGMzGfHDMhMWUgDhTnywE8FBgj/8oORDK+IwV+xGBozVIg9fpYwuLV6VUReVH6xsSx2X7rUBoSKnbE26pfrtl3Jd9wfXdFp/fUb8ELooOs/Sh3oGYDdCN9NpDvnt5+HQPT3QT5ZwByoNaDapFu/LVrBrdwevgMhb+6bBYbB2jsWjj/F0LMO0vFgXqPuEMv6yWNNUh3zBMTkPmwAiYvTtV1Dj26lL7zhvjhP4JrNiauwc=

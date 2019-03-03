@@ -1,0 +1,9 @@
+/coverage/
+/src/
+/test/
+/_*
+.editorconfig
+.eslintrc.js
+.travis.yml
+jest.config.js
+tsconfig.json

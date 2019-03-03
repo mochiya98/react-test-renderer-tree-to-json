@@ -1,0 +1,69 @@
+{
+  "name": "react-test-renderer-tree-to-json",
+  "version": "1.0.0",
+  "description": "Convert React Test Renderer tree to a format compatible with Jest snapshot testing.",
+  "keywords": [
+    "enzyme",
+    "jest",
+    "snapshot",
+    "wrapper",
+    "pretty-format",
+    "convert",
+    "testing",
+    "unit",
+    "test",
+    "react",
+    "react-test-renderer"
+  ],
+  "author": "Yukimasa Funaoka <yukimasafunaoka@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/mochiya98/react-test-renderer-tree-to-json",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mochiya98/react-test-renderer-tree-to-json"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "npx tsc",
+    "lint": "npx run-p --aggregate-output -s -n lint:*",
+    "lint:eslint": "npx eslint --color --ext js,jsx,ts,tsx --ignore-pattern \"/dist/\" .",
+    "lint:tsc": "npx tsc --pretty --noEmit",
+    "test": "npx run-s lint test:*",
+    "test:unit": "npx jest --runInBand"
+  },
+  "pre-commit": [
+    "lint"
+  ],
+  "pre-push": [
+    "test"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jest": "^24.0.9",
+    "@types/react": "^16.8.6",
+    "@types/react-dom": "^16.8.2",
+    "@types/react-test-renderer": "^16.8.1",
+    "@typescript-eslint/eslint-plugin": "^1.4.2",
+    "@typescript-eslint/parser": "^1.4.2",
+    "eslint": "^5.15.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-jest": "^22.3.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-typescript-sort-keys": "^0.2.0",
+    "jest": "^24.1.0",
+    "npm-run-all": "^4.1.5",
+    "pre-commit": "^1.2.2",
+    "pre-push": "^0.1.1",
+    "prettier": "^1.16.4",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
+    "react-test-renderer": "^16.8.3",
+    "ts-jest": "^24.0.0",
+    "typescript": "^3.3.3333"
+  },
+  "peerDependencies": {
+    "react-test-renderer": "^16.8.3"
+  }
+}
