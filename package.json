@@ -1,6 +1,6 @@
 {
   "name": "react-test-renderer-tree-to-json",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Convert React Test Renderer tree to a format compatible with Jest snapshot testing.",
   "keywords": [
     "enzyme",
