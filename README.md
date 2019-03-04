@@ -1,4 +1,4 @@
-﻿# react-test-renderer-tree-to-json
+# react-test-renderer-tree-to-json
 
 [![Build Status](https://img.shields.io/travis/mochiya98/react-test-renderer-tree-to-json.svg?branch=master&style=flat-square)](https://travis-ci.org/mochiya98/react-test-renderer-tree-to-json) [![Coverage Status](https://img.shields.io/coveralls/github/mochiya98/react-test-renderer-tree-to-json.svg?style=flat-square)](https://coveralls.io/github/mochiya98/react-test-renderer-tree-to-json?branch=master)  
 [![npm Version](https://img.shields.io/npm/v/react-test-renderer-tree-to-json.svg?style=flat-square)](https://www.npmjs.com/package/react-test-renderer-tree-to-json) [![License](https://img.shields.io/npm/l/react-test-renderer-tree-to-json.svg?style=flat-square)](https://www.npmjs.com/package/react-test-renderer-tree-to-json) [![Downloads](https://img.shields.io/npm/dm/react-test-renderer-tree-to-json.svg?style=flat-square)](https://npm-stat.com/charts.html?package=react-test-renderer-tree-to-json)
