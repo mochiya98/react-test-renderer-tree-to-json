@@ -17,7 +17,7 @@ class ClassComponent extends Component {
 export { EmptyComponent, DivWrapper };
 
 /* eslint-disable react/jsx-key */
-export const testCases: [string, ReactNode][] = [
+export const testCases: [string, ReactElement | null][] = [
   ["null", null],
   ["empty children", <p />],
   ["with props", <p className="a" />],
