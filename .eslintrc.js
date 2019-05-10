@@ -14,6 +14,7 @@ module.exports = {
     "sort-keys": "error",
     "typescript-sort-keys/interface": "error",
     "@typescript-eslint/indent": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/no-explicit-any": "warn",
     "@typescript-eslint/no-unnecessary-type-assertion": "error",
     "@typescript-eslint/no-unused-vars": [
