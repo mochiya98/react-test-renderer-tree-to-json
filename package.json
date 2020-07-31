@@ -1,6 +1,6 @@
 {
   "name": "react-test-renderer-tree-to-json",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Convert React Test Renderer tree to a format compatible with Jest snapshot testing.",
   "keywords": [
     "enzyme",
@@ -30,7 +30,8 @@
     "lint:eslint": "npx eslint --color --ext js,jsx,ts,tsx --ignore-pattern \"/dist/\" .",
     "lint:tsc": "npx tsc --pretty --noEmit",
     "test": "npx run-s lint test:*",
-    "test:unit": "npx jest --runInBand"
+    "test:unit": "npx jest --runInBand",
+    "prepack": "npm run test && npm run build"
   },
   "pre-commit": [
     "lint"
