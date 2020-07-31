@@ -3,7 +3,7 @@ import { Component, FunctionComponent, ReactElement, ReactNode } from "react";
 
 const EmptyComponent: FunctionComponent = (): null => null;
 const DivWrapper: FunctionComponent = ({
-  children
+  children,
 }: {
   children?: ReactNode;
 }): ReactElement<HTMLElement> => <div>{children}</div>;
@@ -12,6 +12,12 @@ class ClassComponent extends Component {
   public render(): ReactNode {
     return null;
   }
+}
+class ClassComponentWithDisplayName extends Component {
+  public render(): ReactNode {
+    return null;
+  }
+  static displayName = "ClassComponentWithDisplayName(ok)";
 }
 
 export { EmptyComponent, DivWrapper };
@@ -24,35 +30,36 @@ export const testCases: [string, ReactElement | null][] = [
   ["string children", <p>hoge</p>],
   ["null component", <EmptyComponent />],
   ["class component", <ClassComponent />],
+  ["class component with displayName", <ClassComponentWithDisplayName />],
   [
     "anonymous component",
-    (AnonymousComponent => <AnonymousComponent />)(() => null)
+    ((AnonymousComponent) => <AnonymousComponent />)(() => null),
   ],
   [
     "raw children",
     <DivWrapper>
       <p />
-    </DivWrapper>
+    </DivWrapper>,
   ],
   [
     "single children",
     <p>
       <p />
-    </p>
+    </p>,
   ],
   [
     "multiple children",
     <p>
       <p className="a" key="a" />
       <p className="b" key="b" />
-    </p>
+    </p>,
   ],
   [
     "multiple children with keys",
     <p>
       <p key="a" />
       <p key="b" />
-    </p>
+    </p>,
   ],
   [
     "multiple children includes null",
@@ -60,7 +67,7 @@ export const testCases: [string, ReactElement | null][] = [
       <p className="a" />
       {null}
       <p className="b" />
-    </div>
+    </div>,
   ],
   [
     "multiple children includes string",
@@ -68,7 +75,7 @@ export const testCases: [string, ReactElement | null][] = [
       <div className="a" />
       hoge
       <div className="b" />
-    </div>
+    </div>,
   ],
   [
     "deep dive",
@@ -78,7 +85,7 @@ export const testCases: [string, ReactElement | null][] = [
           <p className="b">hoge</p>
         </DivWrapper>
       </p>
-    </DivWrapper>
-  ]
+    </DivWrapper>,
+  ],
 ];
 /* eslint-enable react/jsx-key */

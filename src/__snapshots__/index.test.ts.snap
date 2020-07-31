@@ -4,6 +4,8 @@ exports[`snapshot anonymous component 1`] = `<Component />`;
 
 exports[`snapshot class component 1`] = `<ClassComponent />`;
 
+exports[`snapshot class component with displayName 1`] = `<ClassComponentWithDisplayName(ok) />`;
+
 exports[`snapshot deep dive 1`] = `
 <DivWrapper>
   <div>

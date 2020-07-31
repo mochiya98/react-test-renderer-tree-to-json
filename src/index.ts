@@ -5,10 +5,11 @@ interface Props {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [propName: string]: any;
 }
+type ComponentType = string | React.ComponentType | ((...args: any[]) => any);
 interface ReactTestRendererJSON {
   children: null | ReactTestRendererJSON[];
   props: Props;
-  type: string | Function;
+  type: ComponentType;
 }
 interface ReactTestRendererTree extends ReactTestRendererJSON {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -27,9 +28,9 @@ export interface TestReactNode {
 function normalizeMixedArray<T>(src: T | T[]): T[] {
   return Array.isArray(src) ? src : [src];
 }
-function normalizeType(type: string | Function): string {
+function normalizeType(type: ComponentType): string {
   if (typeof type === "string") return type;
-  return type.name ? type.name : "Component";
+  return (type as React.ComponentType).displayName || type.name || "Component";
 }
 
 function treeToJSON<T>(tree: T | ReactTestRendererTree): T | TestReactNode;
@@ -46,13 +47,13 @@ function treeToJSON(
   const children: TestReactNode["children"] =
     tree.rendered === null
       ? null
-      : normalizeMixedArray(tree.rendered).map(r => treeToJSON(r));
+      : normalizeMixedArray(tree.rendered).map((r) => treeToJSON(r));
 
   return {
     $$typeof: reactTestSymbol,
     children,
     props,
-    type
+    type,
   };
 }
 
